@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Kiran Kumar | Computer Science Engineering Student | Aspiring Software Engineer</title>
   <meta name="description" content="Portfolio of Kiran Kumar, a Computer Science Engineering student at SRM Easwari Engineering College passionate about software development, full-stack web, data science, AI, and algorithmic problem solving." />
   <meta name="keywords" content="Kiran Kumar, Software Engineer, CSE Student, SRM Easwari, Web Developer, Java, Spring Boot, Python, AI, LeetCode, Portfolio" />
@@ -139,6 +139,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
@@ -150,8 +153,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
   transition: background-color 0.4s ease, color 0.4s ease;
   position: relative;
+}
+
+body.nav-drawer-open {
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2908,100 +2919,1056 @@ footer.site-footer {
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 
-/* ============ RESPONSIVE MEDIA QUERIES (LAPTOP, TABLET, MOBILE) ============ */
+/* ==========================================================================
+   ULTRA-PREMIUM RESPONSIVE ARCHITECTURE (DESKTOP, TABLET, AND PHONE SCREEN SETS)
+   ========================================================================== */
 
-/* Compact Desktop / Laptop: 1101px to 1220px */
-@media (max-width: 1220px) {
-  .cmd-palette-btn .cmd-shortcut { display: none; }
-  .nav-link { padding: 5px 7px; font-size: 12.5px; }
+/* --------------------------------------------------------------------------
+   GLOBAL FLUID & TOUCH ENHANCEMENTS
+   -------------------------------------------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch screen optimizations: disable aggressive desktop tilts & expand tap targets */
+  .tilt-interactive {
+    transform: none !important;
+  }
+  .nav-icon-btn,
+  .cmd-palette-btn,
+  #navResumeBtn,
+  .hamburger-btn,
+  .btn,
+  .social-pill-link,
+  .cert-filter-pill,
+  .terminal-tab-btn {
+    min-height: 42px;
+    touch-action: manipulation;
+  }
 }
 
-/* Laptop / Large Tablet Boundary: Below 1100px, switch desktop links to tablet/mobile drawer */
-@media (max-width: 1100px) {
-  .nav-links-wrapper { display: none; }
-  .hamburger-btn { display: flex; }
-  .cmd-palette-btn { display: none; }
-  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-grid-layout { grid-template-columns: 1fr; gap: 44px; }
-  .contact-grid-layout { grid-template-columns: 1fr; gap: 40px; }
-  .focus-bento-grid { grid-template-columns: repeat(2, 1fr); }
-  .project-card-item { grid-template-columns: 1fr; }
-  .project-visual-panel { border-right: none; border-bottom: 1px solid var(--border-subtle); }
-  .education-showcase-card { grid-template-columns: 1fr; gap: 20px; }
-  .stats-counter-strip { grid-template-columns: repeat(2, 1fr); }
+/* --------------------------------------------------------------------------
+   SCREEN SET 1: DESKTOP & LARGE DISPLAYS (min-width: 1025px)
+   -------------------------------------------------------------------------- */
+
+/* Ultra-Wide Desktop Screens: 1441px and above */
+@media (min-width: 1441px) {
+  :root {
+    --max-width: 1280px;
+  }
+  section {
+    padding: 105px 0;
+  }
+  .hero-section {
+    padding-top: 155px;
+    padding-bottom: 95px;
+  }
+  .hero-heading {
+    font-size: 64px;
+  }
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 64px;
+  }
+  .photo-interactive-container {
+    width: 310px;
+  }
+  .focus-bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .project-card-item {
+    grid-template-columns: 340px 1fr;
+  }
 }
 
-/* Tablet: 681px to 960px */
-@media (max-width: 960px) {
-  .nav-wrapper { padding: 0 16px; }
+/* Standard Desktop: 1201px to 1440px */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .hero-grid {
+    gap: 52px;
+  }
+  .project-card-item {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+/* Compact Desktop & Standard Laptops: 1025px to 1200px */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .nav-wrapper {
+    padding: 0 16px;
+  }
   .nav-glass-container {
-    padding: 6px 10px 6px 14px;
+    padding: 5px 8px 5px 14px;
+    gap: 8px;
+  }
+  .nav-brand {
+    font-size: 15px;
+    gap: 8px;
+  }
+  .nav-links-wrapper {
+    gap: 0;
+    padding: 2px;
+  }
+  .nav-link {
+    padding: 5px 7px;
+    font-size: 12px;
+  }
+  .cmd-palette-btn {
+    padding: 5px 9px;
+    font-size: 12px;
+  }
+  .cmd-palette-btn .cmd-shortcut {
+    display: none;
+  }
+  #navResumeBtn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+  }
+  .hero-heading {
+    font-size: 46px;
+  }
+  .photo-interactive-container {
+    width: 260px;
+  }
+  .interactive-terminal .terminal-body {
+    padding: 16px 18px;
+    font-size: 12.5px;
+  }
+  .focus-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .project-card-item {
+    grid-template-columns: 280px 1fr;
+  }
+  .project-info-body {
+    padding: 28px 24px;
+  }
+  .coding-platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SCREEN SET 2: TABLET SCREENS (768px to 1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  section {
+    padding: 75px 0;
+  }
+  .container {
+    padding: 0 28px;
+  }
+  .nav-wrapper {
+    padding: 0 20px;
+  }
+  .nav-glass-container {
+    padding: 7px 12px 7px 16px;
+    gap: 12px;
+  }
+  
+  /* Tablet Navigation: Desktop full links tucked into drawer; top header is clean & balanced */
+  .nav-links-wrapper {
+    display: none;
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .cmd-palette-btn {
+    display: inline-flex;
+    padding: 6px 12px;
+  }
+  .cmd-palette-btn .cmd-shortcut {
+    display: none;
+  }
+  #navResumeBtn {
+    padding: 7px 14px;
+    font-size: 12.5px;
+  }
+  .resume-btn-text-full {
+    display: inline;
+  }
+  .resume-btn-text-short {
+    display: none;
+  }
+
+  /* Tablet Hero View */
+  .hero-section {
+    padding-top: 130px;
+    padding-bottom: 70px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    text-align: left;
+  }
+  .hero-heading {
+    font-size: clamp(38px, 5vw, 50px);
+  }
+  .hero-role-wrapper {
+    font-size: 24px;
+  }
+  .hero-visual-column {
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .photo-interactive-container {
+    width: 260px;
+    margin: 0 auto 30px;
+  }
+  .badge-bottom-left {
+    left: -12px;
+    bottom: -10px;
+  }
+  .interactive-terminal {
+    max-width: 100%;
+  }
+
+  /* Tablet Stats Counter Strip: Clean 2x2 Grid */
+  .stats-counter-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 44px;
+  }
+  .stat-box {
+    padding: 22px 20px;
+  }
+
+  /* Tablet Bento & Skills */
+  .focus-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .skills-matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .skill-category-card {
+    padding: 24px 20px;
+  }
+
+  /* Tablet Projects Showcase: High-Tech Stacked Cards */
+  .project-card-item {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius-lg);
+  }
+  .project-visual-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 28px 24px;
+  }
+  .flow-diagram-wrapper {
+    margin-top: 14px;
+    padding-top: 14px;
+  }
+  .project-info-body {
+    padding: 30px 24px;
+  }
+  .project-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+  }
+
+  /* Tablet Certifications: 2-Column Grid */
+  .cert-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .cert-holographic-card {
+    padding: 20px 18px;
+  }
+
+  /* Tablet Achievements & Timeline */
+  .achievements-timeline-rail {
+    padding-left: 32px;
+  }
+  .timeline-event-node {
+    left: -32px;
+  }
+  .timeline-event-inner {
+    padding: 22px 20px;
+  }
+
+  /* Tablet Education */
+  .education-showcase-card {
+    grid-template-columns: auto 1fr;
+    gap: 26px;
+    padding: 34px 28px;
+  }
+
+  /* Tablet Coding Platforms */
+  .coding-platforms-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  /* Tablet About & Contact */
+  .about-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .contact-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .contact-form-glass {
+    padding: 32px 26px;
+  }
+
+  /* Tablet Drawer Styling */
+  .mobile-nav-drawer {
+    padding: 110px 48px 48px;
+    max-width: 520px;
+    left: auto;
+    right: 0;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+    border-left: 1px solid var(--border-subtle);
+  }
+}
+
+/* Tablet Landscape specific tuning (881px to 1024px) */
+@media (min-width: 881px) and (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+  }
+  .hero-visual-column {
+    max-width: 100%;
+  }
+  .about-grid-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 32px;
+  }
+  .coding-platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .contact-grid-layout {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SCREEN SET 3: PHONE / MOBILE SCREENS (max-width: 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* Universal Mobile Safety & Fluid Foundations */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  section {
+    padding: 56px 0;
+  }
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Typography Scales */
+  .section-title {
+    font-size: clamp(24px, 6.2vw, 32px);
+    line-height: 1.22;
+  }
+  .section-subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 26px;
+  }
+  .section-kicker {
+    font-size: 11.5px;
+    margin-bottom: 8px;
+  }
+  .section-watermark {
+    display: none !important;
+  }
+
+  /* Compact Sticky Navbar */
+  header.navbar {
+    padding: 8px 0;
+  }
+  header.navbar.scrolled {
+    padding: 6px 0;
+  }
+  .nav-wrapper {
+    padding: 0 12px;
+  }
+  .nav-glass-container {
+    padding: 5px 8px 5px 12px;
+    gap: 8px;
+    border-radius: var(--radius-full);
+  }
+  .nav-brand {
+    font-size: 14.5px;
+    gap: 8px;
+    margin-right: 0;
+  }
+  .nav-brand-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+  .nav-links-wrapper {
+    display: none;
+  }
+  .cmd-palette-btn {
+    display: none;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
+  .nav-icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+  #navResumeBtn {
+    padding: 6px 11px;
+    font-size: 12px;
+    gap: 5px;
+  }
+  .resume-btn-text-full {
+    display: none;
+  }
+  .resume-btn-text-short {
+    display: inline;
+  }
+  .hamburger-btn {
+    display: flex;
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Mobile Navigation Drawer Full-Screen Experience */
+  .mobile-nav-drawer {
+    padding: calc(75px + env(safe-area-inset-top, 0px)) 22px calc(24px + env(safe-area-inset-bottom, 0px));
+    gap: 6px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-nav-link {
+    font-size: 18.5px;
+    padding: 10px 0;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: calc(88px + env(safe-area-inset-top, 0px));
+    padding-bottom: 45px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: left;
+  }
+  .status-pill {
+    font-size: 12px;
+    padding: 5px 12px;
+    margin-bottom: 18px;
+  }
+  .hero-heading {
+    font-size: clamp(28px, 7.8vw, 38px);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    word-break: break-word;
+  }
+  .hero-role-wrapper {
+    font-size: clamp(16px, 4.8vw, 20px);
+    gap: 6px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .hero-lead {
+    font-size: 14.5px;
+    line-height: 1.62;
+    margin-bottom: 22px;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
     gap: 10px;
   }
-}
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 46px;
+  }
+  .hero-social-row {
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+  .social-pill-link {
+    width: 42px;
+    height: 42px;
+  }
 
-/* Mobile: Below 680px */
-@media (max-width: 680px) {
-  section { padding: 65px 0; }
-  .container { padding: 0 16px; }
-  .nav-wrapper { padding: 0 12px; }
-  .nav-glass-container { padding: 5px 8px 5px 12px; gap: 8px; }
-  .nav-brand { font-size: 15px; gap: 8px; margin-right: 0; }
-  .nav-brand-badge { width: 28px; height: 28px; font-size: 13px; }
-  
-  .hero-section { padding-top: 110px; }
-  .skills-matrix-grid { grid-template-columns: 1fr; }
-  .cert-cards-grid { grid-template-columns: 1fr; }
-  .coding-platforms-grid { grid-template-columns: 1fr; }
-  .focus-bento-grid { grid-template-columns: 1fr; }
-  .stats-counter-strip { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .form-dual-row { grid-template-columns: 1fr; }
-  .project-feature-grid { grid-template-columns: 1fr; }
-  .project-info-body { padding: 24px 18px; }
-  .project-visual-panel { padding: 22px 18px; }
-  .achievements-timeline-rail { padding-left: 28px; }
-  .achievements-timeline-rail::before { left: 7px; }
-  .timeline-event-node { left: -28px; width: 16px; height: 16px; top: 4px; }
-  .timeline-event-inner { padding: 20px 16px; }
-  .modal-window-card { padding: 24px 16px; }
-  .section-watermark { display: none; }
-  .photo-interactive-container { width: min(230px, 72vw); }
-  .floating-glass-badge {
+  /* Hero Visual Column (Photo & Terminal) */
+  .hero-visual-column {
+    width: 100%;
+    max-width: 100%;
+  }
+  .photo-interactive-container {
+    width: min(220px, 66vw);
+    margin: 0 auto 26px;
+  }
+  /* Center floating badge safely at bottom of photo to guarantee ZERO horizontal overflow */
+  .floating-glass-badge.badge-bottom-left {
+    left: 50% !important;
+    right: auto !important;
+    bottom: -12px !important;
+    transform: translateX(-50%) !important;
+    padding: 6px 12px;
+    font-size: 11px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  }
+  .interactive-terminal {
+    border-radius: var(--radius-md);
+  }
+  .terminal-header {
+    padding: 10px 14px;
+  }
+  .terminal-tabs {
+    gap: 4px;
+  }
+  .terminal-tab-btn {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+  .terminal-body {
+    padding: 14px;
+    font-size: 11.5px;
+    line-height: 1.6;
+    min-height: 170px;
+    max-height: 220px;
+  }
+  .terminal-prompt-line {
+    font-size: 11.5px;
+    gap: 6px;
+  }
+  .terminal-input {
+    font-size: 11.5px;
+  }
+  .terminal-quick-chips {
+    gap: 5px;
+    margin-top: 8px;
+  }
+  .terminal-chip {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+
+  /* Stats Counter Strip */
+  .stats-counter-strip {
+    margin-top: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .stat-box {
+    padding: 14px 10px;
+    border-radius: var(--radius-sm);
+  }
+  .stat-number {
+    font-size: 26px;
+  }
+  .stat-label {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  /* About Section */
+  .about-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .about-narrative p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .milestone-item {
+    gap: 14px;
+    padding-bottom: 22px;
+  }
+  .milestone-node {
+    width: 12px;
+    height: 12px;
+  }
+  .milestone-details h4 {
+    font-size: 15px;
+  }
+  .milestone-details p {
+    font-size: 13px;
+  }
+
+  /* Focus Bento Grid */
+  .focus-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .focus-bento-card {
+    padding: 18px 16px;
+  }
+  .focus-bento-card h4 {
+    font-size: 17px;
+    margin: 10px 0 8px;
+  }
+  .focus-bento-card p {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  /* Skills Matrix */
+  .skills-matrix-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .skill-category-card {
+    padding: 18px 16px;
+  }
+  .skill-category-card h4 {
+    font-size: 12.5px;
+    margin-bottom: 14px;
+  }
+  .skill-badges-flow {
+    gap: 7px;
+  }
+  .skill-badge {
     padding: 6px 11px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  /* Featured Projects Showcase */
+  .projects-container-list {
+    gap: 20px;
+  }
+  .project-card-item {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius-md);
+  }
+  .project-visual-panel {
+    padding: 18px 14px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .project-tagline {
     font-size: 11px;
   }
-  .badge-bottom-left { left: -10px; bottom: -10px; }
-  .contact-form-glass { padding: 22px 16px; }
-  .resume-cta-band { padding: 32px 16px; }
+  .prototype-flag {
+    font-size: 10.5px;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+  }
+  .flow-diagram-wrapper {
+    margin-top: 10px;
+    padding-top: 12px;
+  }
+  .flow-node-track {
+    font-size: 10.5px;
+    padding-left: 10px;
+    line-height: 1.6;
+    word-break: break-word;
+  }
+  .project-info-body {
+    padding: 20px 14px;
+  }
+  .project-title {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .project-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .project-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .project-feature-item {
+    font-size: 12.5px;
+  }
+  .project-tech-pills {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .tech-tag-pill {
+    font-size: 11px;
+    padding: 4px 9px;
+  }
+  .project-button-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .project-button-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Certifications Filters & Cards */
+  .cert-filters-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    scrollbar-width: none;
+    gap: 8px;
+  }
+  .cert-filters-row::-webkit-scrollbar {
+    display: none;
+  }
+  .cert-filter-pill {
+    font-size: 12.5px;
+    padding: 7px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cert-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .cert-holographic-card {
+    padding: 16px 14px;
+    gap: 12px;
+  }
+  .cert-icon-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .cert-meta-info h4 {
+    font-size: 15px;
+  }
+  .cert-meta-info p {
+    font-size: 12.5px;
+  }
+
+  /* Achievements Timeline */
+  .achievements-timeline-rail {
+    padding-left: 24px;
+  }
+  .achievements-timeline-rail::before {
+    left: 6px;
+  }
+  .timeline-event-card {
+    padding-bottom: 28px;
+  }
+  .timeline-event-node {
+    left: -24px;
+    width: 14px;
+    height: 14px;
+    top: 3px;
+  }
+  .timeline-event-inner {
+    padding: 16px 14px;
+    border-radius: var(--radius-md);
+  }
+  .timeline-event-inner h4 {
+    font-size: 15.5px;
+  }
+  .timeline-event-inner p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  /* Education Card */
+  .education-showcase-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 22px 16px;
+    border-radius: var(--radius-lg);
+  }
+  .edu-insignia {
+    width: 52px;
+    height: 52px;
+  }
+  .edu-degree {
+    font-size: 18px;
+  }
+  .edu-institution {
+    font-size: 14px;
+  }
+  .edu-coursework-tags {
+    gap: 6px;
+  }
+  .edu-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  /* Learning Trajectory Steps */
+  .trajectory-flow-steps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .trajectory-step-chip {
+    padding: 12px 14px;
+    font-size: 13.5px;
+    text-align: center;
+  }
+  .trajectory-arrow {
+    display: none;
+  }
+
+  /* Coding Platforms */
+  .coding-platforms-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .coding-card {
+    padding: 16px 14px;
+  }
+  .coding-card-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .coding-card-title {
+    font-size: 15px;
+  }
+
+  /* Resume CTA Band */
+  .resume-cta-band {
+    padding: 32px 16px;
+    border-radius: var(--radius-lg);
+  }
+  .resume-cta-band h2 {
+    font-size: 22px;
+  }
+  .resume-cta-band p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+  .resume-action-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .resume-action-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Contact Section */
+  .contact-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contact-info-column p {
+    font-size: 14.5px;
+    margin-bottom: 20px;
+  }
+  .live-clock-card {
+    padding: 12px 14px;
+  }
+  .live-time-val {
+    font-size: 16px;
+  }
+  .contact-form-glass {
+    padding: 20px 14px;
+    border-radius: var(--radius-md);
+  }
+  .form-dual-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .form-field-group {
+    margin-bottom: 16px;
+  }
+  .form-field-group label {
+    font-size: 13px;
+  }
+  /* 16px font-size prevents iOS Safari automatic zoom on input focus! */
+  .form-field-group input,
+  .form-field-group textarea {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+  .contact-form-glass .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  /* Footer */
+  footer.site-footer {
+    padding: 36px 0 24px;
+  }
+  .footer-inner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+  .footer-social-links {
+    justify-content: center;
+  }
+  .footer-copyright {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  /* Modals */
+  .modal-backdrop-overlay {
+    padding: 12px;
+  }
+  .modal-window-card {
+    padding: 22px 14px;
+    max-height: 88vh;
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+  .modal-close-trigger {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+  }
+  .cmd-palette-box {
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+  .cmd-search-header {
+    padding: 12px 14px;
+  }
+  .cmd-input {
+    font-size: 15px;
+  }
+  .cmd-shortcut {
+    display: none;
+  }
+
+  /* Floating Back to Top Button */
+  .back-to-top-btn {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  /* Opening Cinematic Intro Screen */
+  .intro-veil {
+    padding: 16px;
+  }
+  .intro-badge-container {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 12px;
+  }
+  .intro-core-badge {
+    width: 48px;
+    height: 48px;
+  }
+  .intro-monogram {
+    font-size: 20px;
+  }
+  .intro-name-title {
+    font-size: clamp(24px, 7.5vw, 32px);
+    gap: 6px 8px;
+  }
+  .intro-portfolio-text {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+  }
+  .intro-laser-line {
+    max-width: 35px;
+  }
+  .intro-tagline {
+    font-size: 12.5px;
+    margin-bottom: 16px;
+  }
+  .intro-progress-wrapper {
+    width: 100%;
+    max-width: 240px;
+  }
 }
 
-/* Compact Mobile: Below 560px */
-@media (max-width: 560px) {
-  .resume-btn-text-full { display: none; }
-  .resume-btn-text-short { display: inline; }
-  #navResumeBtn { padding: 6px 11px; font-size: 12px; gap: 5px; }
-  .nav-icon-btn { width: 34px; height: 34px; }
-  .hamburger-btn { width: 34px; height: 34px; }
-  .mobile-nav-link { font-size: 20px; padding: 10px 0; }
-  .intro-badge-container { width: 80px; height: 80px; margin-bottom: 14px; }
-  .intro-core-badge { width: 50px; height: 50px; }
-  .intro-monogram { font-size: 22px; }
-  .intro-name-title { font-size: clamp(28px, 8.5vw, 38px); gap: 6px 10px; }
-  .intro-portfolio-text { font-size: 13px; letter-spacing: 0.28em; }
-  .intro-laser-line { max-width: 45px; }
-  .intro-tagline { font-size: 13.5px; margin-bottom: 18px; }
+/* --------------------------------------------------------------------------
+   SCREEN SET 3B: COMPACT MOBILE (< 480px) & EXTRA SMALL PHONES (< 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: clamp(26px, 8.2vw, 34px);
+  }
+  .nav-brand span {
+    font-size: 14px;
+  }
+  .stats-counter-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .stat-box {
+    padding: 12px 8px;
+  }
+  .stat-number {
+    font-size: 24px;
+  }
+  .stat-label {
+    font-size: 10.5px;
+  }
+  .photo-interactive-container {
+    width: min(200px, 64vw);
+  }
 }
 
-/* Extra Small Phones: Below 400px */
-@media (max-width: 400px) {
-  .nav-brand span { font-size: 13.5px; }
-  #soundToggleBtn { display: none; }
-  .hero-heading { font-size: 30px; }
-  .stats-counter-strip { grid-template-columns: 1fr; }
-  .btn { width: 100%; }
-  .hero-cta-group { flex-direction: column; }
-  .intro-name-title { font-size: 27px; }
-  .intro-progress-wrapper { width: 100%; }
+@media (max-width: 380px) {
+  .container {
+    padding: 0 10px;
+  }
+  .nav-wrapper {
+    padding: 0 8px;
+  }
+  .nav-brand span {
+    font-size: 13px;
+  }
+  #soundToggleBtn {
+    display: none;
+  }
+  #navResumeBtn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+  .hero-heading {
+    font-size: 25px;
+  }
+  .hero-role-wrapper {
+    font-size: 15px;
+  }
+  .stat-box {
+    padding: 10px 6px;
+  }
+  .stat-number {
+    font-size: 21px;
+  }
+  .stat-label {
+    font-size: 10px;
+  }
+  .photo-interactive-container {
+    width: min(180px, 60vw);
+  }
+  .terminal-body {
+    font-size: 10.5px;
+    padding: 10px;
+  }
+  .intro-name-title {
+    font-size: 24px;
+  }
 }
 
   </style>
@@ -3814,7 +4781,7 @@ footer.site-footer {
             <div class="timeline-event-node"></div>
             <div class="timeline-event-inner tilt-interactive">
               <span class="timeline-event-tag">HACKATHON PARTICIPATION</span>
-              <h4>Hackfinity / Invente — Smart Budget Tracker Prototype</h4>
+              <h4>Hackfinity / InventE26 — Smart Budget Tracker Prototype</h4>
               <p>Participated in a 24-hour hackathon and developed a smart personal and household budget management prototype. Built a solution for tracking income and expenses, managing shared family finances, setting savings goals, monitoring spending through interactive insights, and providing smart budget alerts with secure role-based household access.</p>
             </div>
           </div>
@@ -4626,20 +5593,48 @@ footer.site-footer {
   const mobileNavDrawer = document.getElementById('mobileNavDrawer');
 
   if (hamburgerBtn && mobileNavDrawer) {
+    function closeMobileDrawer() {
+      mobileNavDrawer.classList.remove('open');
+      hamburgerBtn.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-drawer-open');
+    }
+
     hamburgerBtn.addEventListener('click', () => {
       playSound('click');
       const isOpen = mobileNavDrawer.classList.toggle('open');
       hamburgerBtn.classList.toggle('active', isOpen);
       hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      document.body.classList.toggle('nav-drawer-open', isOpen);
     });
 
     mobileNavDrawer.querySelectorAll('.mobile-nav-link').forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileNavDrawer.classList.remove('open');
-        hamburgerBtn.classList.remove('active');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMobileDrawer);
     });
+
+    // Close on ESC key or click outside drawer
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNavDrawer.classList.contains('open')) {
+        closeMobileDrawer();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (
+        mobileNavDrawer.classList.contains('open') &&
+        !mobileNavDrawer.contains(e.target) &&
+        !hamburgerBtn.contains(e.target)
+      ) {
+        closeMobileDrawer();
+      }
+    });
+
+    // Auto-close drawer when resizing to desktop (>1024px)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024 && mobileNavDrawer.classList.contains('open')) {
+        closeMobileDrawer();
+      }
+    }, { passive: true });
   }
 
   // ==========================================================================
